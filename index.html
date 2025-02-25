@@ -4,10 +4,19 @@
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   </head>
   <body>
-    <form action="?" method="POST">
+    <form id="captchaForm">
       <div class="g-recaptcha" data-sitekey="6LfFg-IqAAAAANbBqpIfHXNnJN1QAzlBk_FdnV9A"></div>
       <br/>
       <input type="submit" value="Submit">
     </form>
+    
+    <h1 id="message" style="display: none;">fuck you</h1>
+
+    <script>
+      document.getElementById("captchaForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent actual form submission
+        document.getElementById("message").style.display = "block"; // Show message
+      });
+    </script>
   </body>
 </html>
